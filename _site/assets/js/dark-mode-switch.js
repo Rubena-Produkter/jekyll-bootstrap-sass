@@ -1,19 +1,105 @@
-// script.js
+// // script.js
 
-// Grab the checkbox and label elements
-const toggle = document.getElementById('theme-toggle');
-const label = document.getElementById('mode-label');
+// // Grab the checkbox and label elements
+// const toggle = document.getElementById('theme-toggle');
+// const label = document.getElementById('mode-label');
 
-// Listen for checkbox state change
-toggle.addEventListener('change', function () {
-    const html = document.documentElement;
+// // Listen for checkbox state change
+// toggle.addEventListener('change', function () {
+//     const html = document.documentElement;
 
-    // Determine theme based on checkbox state
-    const newTheme = this.checked ? 'dark' : 'light';
+//     // Determine theme based on checkbox state
+//     const newTheme = this.checked ? 'dark' : 'light';
 
-    // Set the new theme on the <html> tag
-    html.setAttribute('data-bs-theme', newTheme);
+//     // Set the new theme on the <html> tag
+//     html.setAttribute('data-bs-theme', newTheme);
 
-    // Update label text
-    label.textContent = newTheme === 'dark' ? 'Dark Mode' : 'Light Mode';
-});
+//     // Update label text
+//     label.textContent = newTheme === 'dark' ? 'Dark Mode' : 'Light Mode';
+// });
+
+// Optional: Initialize the theme based on current checkbox state on page load
+(() => {
+  "use strict";
+
+  const getStoredTheme = () => localStorage.getItem("theme");
+  const setStoredTheme = (theme) => localStorage.setItem("theme", theme);
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme();
+    if (storedTheme) {
+      return storedTheme;
+    }
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+
+  const setTheme = (theme) => {
+    if (
+      theme === "auto" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      document.documentElement.setAttribute("data-bs-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-bs-theme", theme);
+    }
+  };
+
+  setTheme(getPreferredTheme());
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector("#bd-theme");
+
+    if (!themeSwitcher) {
+      return;
+    }
+
+    const themeSwitcherText = document.querySelector("#bd-theme-text");
+    const activeThemeIcon = document.querySelector(".theme-icon-active use");
+    const btnToActive = document.querySelector(
+      `[data-bs-theme-value="${theme}"]`
+    );
+    const svgOfActiveBtn = btnToActive
+      .querySelector("svg use")
+      .getAttribute("href");
+
+    document.querySelectorAll("[data-bs-theme-value]").forEach((element) => {
+      element.classList.remove("active");
+      element.setAttribute("aria-pressed", "false");
+    });
+
+    btnToActive.classList.add("active");
+    btnToActive.setAttribute("aria-pressed", "true");
+    activeThemeIcon.setAttribute("href", svgOfActiveBtn);
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`;
+    themeSwitcher.setAttribute("aria-label", themeSwitcherLabel);
+
+    if (focus) {
+      themeSwitcher.focus();
+    }
+  };
+
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", () => {
+      const storedTheme = getStoredTheme();
+      if (storedTheme !== "light" && storedTheme !== "dark") {
+        setTheme(getPreferredTheme());
+      }
+    });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    showActiveTheme(getPreferredTheme());
+
+    document.querySelectorAll("[data-bs-theme-value]").forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const theme = toggle.getAttribute("data-bs-theme-value");
+        setStoredTheme(theme);
+        setTheme(theme);
+        showActiveTheme(theme, true);
+      });
+    });
+  });
+})();
