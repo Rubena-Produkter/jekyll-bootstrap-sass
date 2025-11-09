@@ -1,0 +1,85 @@
+/* styles.css */
+
+/* 1. Define theme variables for LIGHT mode */
+:root,
+[data-bs-theme="light"] {
+    --bg-color: #f8f9fa;         /* Light background */
+    --text-color: #212529;       /* Dark text */
+    --heading-color: #0d6efd;    /* Primary blue heading */
+    --switch-bg: #ccc;           /* Light grey switch background */
+    --slider-color: #fff;        /* White toggle circle */
+}
+
+/* 2. Define theme variables for DARK mode */
+[data-bs-theme="dark"] {
+    --bg-color: #212529;         /* Dark background */
+    --text-color: #f8f9fa;       /* Light text */
+    --heading-color: #66b2ff;    /* Soft blue heading */
+    --switch-bg: #666;           /* Darker switch background */
+    --slider-color: #fff;        /* Keep toggle circle white */
+}
+
+/* 3. Apply the variables to the actual elements */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    -webkit-transition: background-color 0.3s, color 0.3s;
+    -o-transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+    color: var(--heading-color);
+}
+
+/* 4. Custom sliding toggle switch design */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide the checkbox visually */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider background */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--switch-bg);
+    border-radius: 34px;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+/* Toggle knob */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--slider-color);
+    border-radius: 50%;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+/* Move the knob when checkbox is checked */
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+            transform: translateX(26px);
+}
