@@ -8,6 +8,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 language: sv-SE
 lang: sv
 
+logosmall: "/assets/images/logo/R.svg"
+
 github_username: ubbe76
 
 # Build settings
