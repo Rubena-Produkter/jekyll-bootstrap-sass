@@ -8,8 +8,11 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 language: sv-SE
 lang: sv
 
-logosmall: "/assets/images/logo/R.svg"
+logo-small: "/assets/images/logo/R.svg"
+logo: "/assets/images/logo/logo_red.svg"
+logo-white: "/assets/images/logo/logo_white.svg"
 
+linkedin_url: "https://www.linkedin.com/company/rubena-produkter-ab/"
 github_username: ubbe76
 
 # Build settings
@@ -39,6 +42,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules/
+  - deploy.sh
+  - README.md
+  - NOTES.md
 #   - vendor/bundle/
 #   - vendor/cache/
 #   - vendor/gems/

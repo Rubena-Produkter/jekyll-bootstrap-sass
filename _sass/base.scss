@@ -13,34 +13,19 @@ $primary: #89A55D;
     --bg-l7: #d5d5d5;           /* Light background layer 7 */
     --bg-l8: #c8c8c8;           /* Light background layer 8 */
     --bg-color: #f8f9fa;        /* Light background */
+    --bg-topbar: #A50000;       /* Topbar background */
     --text-color: #212529;      /* Dark text */
-    --heading-color: #fd790d;   /* Primary blue heading */
-    --accent-color: #0d6efd;    /* Accent color */
+    --text-topbar: #ff5e14;     /* Topbar text color */
+    --heading-color: #ff5e14;   /* Primary blue heading */
+    --accent-color: #ff5e14;    /* Accent color */
     --accent-color-2: #6610f2;  /* Secondary accent color */
-    --switch-bg: #ccc;          /* Light grey switch background */
-    --slider-color: #fff;       /* White toggle circle */
 }
 
 /* 2. Define theme variables for DARK mode */
-[data-bs-theme="dark"] {
-    --bg-l1: #1c1c1c;           /* Darker background layer 1 */
-    --bg-l2: #1f1f1f;           /* Darker background layer 2 */
-    --bg-l3: #212121;           /* Darker background layer 3 */
-    --bg-l4: #252525;           /* Darker background layer 4 */
-    --bg-l5: #272727;           /* Darker background layer 5 */
-    --bg-l6: #303030;           /* Darker background layer 6 */
-    --bg-l7: #333333;           /* Darker background layer 7 */
-    --bg-l8: #353535;           /* Darker background layer 8 */
-    --bg-color: #1c1c1c;        /* Dark background */
-    --text-color: #ccc;         /* Light text */
-    --heading-color: #ddd;      /* Soft blue heading */
-    --switch-bg: #666;          /* Darker switch background */
-    --slider-color: #ddd;       /* Keep toggle circle white */
-}
 
 /* 3. Apply the variables to the actual elements */
 body {
-    background-color: var(--bg-color);
+    background-color: var(--bg-l1);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
 }
@@ -49,72 +34,35 @@ h1 {
     color: var(--heading-color);
 }
 
-/* 4. Custom sliding toggle switch design */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+/* Topbar Styles */
+.topbar-bg{
+        background: var(--bg-topbar);
+        filter: brightness(85%)
 }
 
-/* Hide the checkbox visually */
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.topbar-left span {
+        margin-right: 7px;
+        color: var(--text-color);
+        font-size: 13px;
 }
-
-/* Slider background */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--switch-bg);
-    border-radius: 34px;
-    transition: 0.4s;
+.topbar-left span i {
+        padding-right: 10px;
+        color: var(--text-topbar);
 }
-
-/* Toggle knob */
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: var(--slider-color);
-    border-radius: 50%;
-    transition: 0.4s;
+.topbar-right span {
+        font-size: 13px;
+        color: var(--text-color);
 }
-
-/* Move the knob when checkbox is checked */
-input:checked + .slider:before {
-    transform: translateX(26px);
+.topbar-right a {
+        color: var(--text-color);
+        font-size: 13px;
+        padding-left: 10px;
 }
-
-.bi {
-  width: 1em;
-  height: 1em;
-  vertical-align: -0.125em;
-  fill: currentcolor;
+.topbar-right a:hover i{
+        color: var(--text-topbar);
 }
-.bd-gutter {
-  --bs-gutter-x: 3rem;
-}
-.dropdown-menu-end {
-  --bs-dropdown-min-width: 8rem !important;
-  padding: 4px !important;
-}
-.dropdown-menu .dropdown-item {
-  border-radius: 0.25rem !important;
-}
-.dropdown-item {
-  border-radius: 0.25rem !important;
-}
-.mode {
-  justify-content: space-between;
-  flex-direction: row-reverse;
+.topbar-right i {
+        display: inline-block;
+        padding: 13px 0;
+        transition: .3s;
 }
