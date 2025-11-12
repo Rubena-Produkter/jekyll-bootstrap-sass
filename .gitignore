@@ -1,2 +1,5 @@
 deploy.sh
-NOTES
+NOTES.md
+build-deploy.sh
+./_site/
+./jekyll-cache/
