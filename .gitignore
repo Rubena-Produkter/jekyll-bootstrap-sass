@@ -1,7 +1,6 @@
-deploy.sh
-NOTES.md
-build-deploy.sh
-_site/*y
-jekyll-cache/*
-.git/*
-.gitignore
+/deploy.sh
+/NOTES.md
+/build-deploy.sh
+/_site/*y
+/jekyll-cache/*
+/.git/*
