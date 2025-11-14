@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Jekyll with Bootstrap 5.3 and dark mode switch
+title: Jekyll with Bootstrap 5.3, Font Awesome and dark mode switch
 ---
+
+{% include hero.html %}
 
  {%- if page.title -%}
   <div>

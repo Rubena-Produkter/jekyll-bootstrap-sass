@@ -78,6 +78,7 @@ GEM
       webrick (~> 1.7)
     jekyll-autoprefixer (1.0.2)
       autoprefixer-rails (~> 9.3)
+    jekyll-fontawesome-svg (0.4.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
     jekyll-watch (2.2.1)
@@ -163,6 +164,7 @@ DEPENDENCIES
   execjs (= 2.7)
   jekyll (~> 4.4)
   jekyll-autoprefixer (~> 1.0)
+  jekyll-fontawesome-svg (~> 0.4.0)
   webrick (~> 1.9)
 
 BUNDLED WITH

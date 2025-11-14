@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 /*!
  * Bootstrap  v5.3.8 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
@@ -13482,22 +13483,42 @@ textarea.form-control-lg {
   --bg-l7: #d5d5d5; /* Light background layer 7 */
   --bg-l8: #c8c8c8; /* Light background layer 8 */
   --bg-color: #f8f9fa; /* Light background */
-  --bg-topbar: #A50000; /* Topbar background */
   --text-color: #212529; /* Dark text */
+  --text-color-muted: #6c757d; /* Muted text color */
   --text-topbar: #ff5e14; /* Topbar text color */
+  --icon-color-topbar: #ff5e14; /* Topbar icon color */
   --heading-color: #ff5e14; /* Primary blue heading */
   --accent-color: #ff5e14; /* Accent color */
   --accent-color-2: #6610f2; /* Secondary accent color */
+  --accent-color-3: #A50000; /* Third accent color */
 }
 
 /* 2. Define theme variables for DARK mode */
 /* 3. Apply the variables to the actual elements */
+/* Global Styles */
 body {
   background-color: var(--bg-l1);
   color: var(--text-color);
-  -webkit-transition: background-color 0.3s, color 0.3s;
-  -o-transition: background-color 0.3s, color 0.3s;
-  transition: background-color 0.3s, color 0.3s;
+  min-height: 200vh;
+}
+
+/* Navbar */
+.nav-default {
+  -webkit-transition: 500ms ease;
+  -o-transition: 500ms ease;
+  transition: 500ms ease;
+  background: var(--bg-l3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-default.scrolled {
+  background: transparent;
+}
+
+/* Logo styles */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 h1, .h1 {
@@ -13505,42 +13526,30 @@ h1, .h1 {
 }
 
 /* Topbar Styles */
-.topbar-bg {
-  background: var(--bg-topbar);
-  -webkit-filter: brightness(85%);
-          filter: brightness(85%);
-}
-
-.topbar-left span {
-  margin-right: 7px;
+.topbar {
+  background: var(--bg-l2);
+  border-bottom: 1px solid var(--bg-l4);
   color: var(--text-color);
-  font-size: 13px;
+  font-size: 14px;
 }
 
-.topbar-left span i {
-  padding-right: 10px;
-  color: var(--text-topbar);
+.topbar i {
+  font-size: 14px;
+  color: var(--text-color-muted);
+  margin-right: 5px;
 }
 
-.topbar-right span {
-  font-size: 13px;
-  color: var(--text-color);
+.topbar span {
+  margin-right: 15px;
 }
 
-.topbar-right a {
-  color: var(--text-color);
-  font-size: 13px;
-  padding-left: 10px;
-}
-
-.topbar-right a:hover i {
-  color: var(--text-topbar);
-}
-
-.topbar-right i {
-  display: inline-block;
-  padding: 13px 0;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+/* Hero section */
+.hero {
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.3))), url("/assets/images/rubena-hero.jpg");
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("/assets/images/rubena-hero.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("/assets/images/rubena-hero.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }

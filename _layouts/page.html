@@ -5,7 +5,11 @@
   {% include topbar.html %}
   {% include header.html %}
   <main>
-    {{ content }}
+    <div class="container">
+      <div class="d-flex flex-wrap py-3 mb-4">
+        {{ content }}
+      </div>
+    </div>
   </main>
     {% include footer-scripts.html %}
 </body>

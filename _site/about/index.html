@@ -5,34 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rubena Produkter AB</title>
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/all.min.css">
 </head>
 <body>
-  <div class="header-top topbar-bg">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-xl-6 col-lg-6 col-md-8 text-center text-md-left">
-                <div class="topbar-left">
-                    <span><i class="far fa-envelope-open"></i>box@rubena.se</span>
-                    <span><i class="fas fa-phone"></i>0322-64 34 00</span>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-4 text-center text-md-right">
-                <div class="topbar-right">
-                    <span>Följ oss:</span>
-                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/company/rubena-produkter-ab/"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="container-fluid topbar">
+  <div class="container">
+    <div class="col-7"><span><i class="fa fa-envelope"></i>box@rubena.se</span><span><i class="fa fa-phone"></i>0322-64 34 00</span></div>
+  </div>
 </div>
   <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom sticky-top">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> 
         <img src="/assets/images/logo/R.svg" width="32" height="40" aria-hidden="true">
         <span class="fs-4">Rubena Produkter AB</span> </a> 
-        <ul class="nav nav-pills">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Start</a></li>
+        <ul class="nav">
+            <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Start</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Tjänster</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Produkter</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Kunskapsbank</a></li>
@@ -43,7 +30,9 @@
     </header>
 </div>
   <main>
-    <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a></p>
+    <div class="container">
+      <div class="d-flex flex-wrap py-3 mb-4">
+        <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a></p>
 
 <p>You can find the source code for Minima at GitHub:
 <a href="https://github.com/jekyll">jekyll</a> /
@@ -54,8 +43,14 @@
 <a href="https://github.com/jekyll/jekyll">jekyll</a></p>
 
 
+      </div>
+    </div>
   </main>
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script for changing navbar background on scroll -->
+<script src="/assets/js/navbar.js"></script>
+
 <noscript>
     <div class="alert alert-danger" role="alert">
         JavaScript is disabled.
