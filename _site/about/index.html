@@ -13,25 +13,51 @@
     <div class="col-7"><span><i class="fa fa-envelope"></i>box@rubena.se</span><span><i class="fa fa-phone"></i>0322-64 34 00</span></div>
   </div>
 </div>
-  <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom sticky-top">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> 
-        <img src="/assets/images/logo/R.svg" width="32" height="40" aria-hidden="true">
-        <span class="fs-4">Rubena Produkter AB</span> </a> 
-        <ul class="nav">
-            <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Start</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Tjänster</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Produkter</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Kunskapsbank</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Nyheter</a></li>
-            <li class="nav-item"><a href="/about" class="nav-link">Om Oss</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Kontakt</a></li>
-        </ul>
-    </header>
-</div>
-  <main>
+  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <div class="d-flex flex-wrap py-3 mb-4">
+        <a class="navbar-brand logo text-dark" href="/">
+            <img src="/assets/images/logo/logo-red.png" width="160" aria-hidden="true">
+            <!-- Rubena Produkter AB -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-dark fw-medium" href="/">Hem</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark fw-medium" href="#">Produkter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark fw-medium" href="/about">Om oss</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark fw-medium" href="#">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/company/rubena-produkter-ab/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark fw-medium" href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main>
         <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a></p>
 
 <p>You can find the source code for Minima at GitHub:
@@ -43,13 +69,8 @@
 <a href="https://github.com/jekyll/jekyll">jekyll</a></p>
 
 
-      </div>
-    </div>
   </main>
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
-
-<!-- Script for changing navbar background on scroll -->
-<script src="/assets/js/navbar.js"></script>
 
 <noscript>
     <div class="alert alert-danger" role="alert">

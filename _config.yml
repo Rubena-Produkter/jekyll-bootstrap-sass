@@ -9,8 +9,8 @@ language: sv-SE
 lang: sv
 
 logo-small: "/assets/images/logo/R.svg"
-logo: "/assets/images/logo/logo_red.svg"
-logo-white: "/assets/images/logo/logo_white.svg"
+logo-red: "/assets/images/logo/logo-red.png"
+logo-white: "/assets/images/logo/logo-white.png"
 
 linkedin_url: "https://www.linkedin.com/company/rubena-produkter-ab/"
 github_username: ubbe76
